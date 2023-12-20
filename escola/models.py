@@ -34,7 +34,8 @@ class Matricula(models.Model):
         on_delete=models.CASCADE,
         blank=False, 
         null=False, 
-        related_name='aluno_matricula')
+        related_name='aluno_matricula'
+    )
     curso = models.ForeignKey(
         Curso, 
         on_delete=models.CASCADE, 

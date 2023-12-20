@@ -24,4 +24,4 @@ class ListaMatriculaAluno(generics.ListAPIView):
         'curso__curso_matricula',
         'periodo'
     )
-    serializer_class = ListaMatriculaAlunoSerializer 
+    serializer_class = ListaMatriculaAlunoSerializer(queryset)

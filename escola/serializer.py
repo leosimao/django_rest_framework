@@ -16,14 +16,15 @@ class MatriculaSerializer(serializers.ModelSerializer):
         model = Matricula
         fields = '__all__'
         
-class ListaMatriculaAlunoSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Matricula
-        fields = ['curso', 'periodo']
-        
+class ListaMatriculaAlunoSerializer(serializers.Serializer):
     curso = serializers.SerializerMethodField()
     periodo = serializers.SerializerMethodField()
-    
+    class Meta:
+        fields = (
+            'curso',
+            'periodo',
+        )
+
     def get_curso(self, instance):
         return instance['curso__curso_matricula']
 
